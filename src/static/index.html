@@ -15,6 +15,18 @@
     <main>
       <section id="activities-container">
         <h3>Available Activities</h3>
+        <!-- Filter, Sort, and Search Controls -->
+        <div id="activity-controls" style="margin-bottom: 16px;">
+          <input type="text" id="activity-search" placeholder="Search activities..." style="margin-right:8px; padding:6px;" />
+          <select id="activity-sort" style="margin-right:8px; padding:6px;">
+            <option value="name">Sort by Name</option>
+            <option value="spots">Sort by Spots Left</option>
+          </select>
+          <select id="activity-category" style="padding:6px;">
+            <option value="all">All Categories</option>
+            <!-- Categories will be loaded here dynamically -->
+          </select>
+        </div>
         <div id="activities-list">
           <!-- Activities will be loaded here -->
           <p>Loading activities...</p>

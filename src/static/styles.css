@@ -198,3 +198,26 @@ footer {
   padding: 20px;
   color: #666;
 }
+
+#activity-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+#activity-controls input,
+#activity-controls select {
+  font-size: 16px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  padding: 6px 10px;
+}
+
+#activity-controls input {
+  width: 180px;
+}
+
+#activity-controls select {
+  min-width: 140px;
+}
