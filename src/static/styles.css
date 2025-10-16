@@ -16,7 +16,6 @@ body {
 }
 
 header {
-  text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
@@ -24,8 +23,27 @@ header {
   border-radius: 5px;
 }
 
-header h1 {
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title-section {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.title-section h1 {
   margin-bottom: 10px;
+}
+
+.auth-section {
+  position: relative;
+  min-width: 100px;
 }
 
 main {
@@ -192,9 +210,154 @@ button:hover {
   display: none;
 }
 
+/* Authentication styles */
+.user-icon {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.user-icon:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.user-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  z-index: 1000;
+}
+
+.auth-btn {
+  background-color: #1a237e;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+  margin: 2px 0;
+}
+
+.auth-btn:hover {
+  background-color: #3949ab;
+}
+
+#user-info {
+  text-align: center;
+  color: #333;
+}
+
+#user-name {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #1a237e;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #666;
+}
+
+.close:hover {
+  color: #000;
+}
+
+.modal h3 {
+  margin-bottom: 20px;
+  color: #1a237e;
+  text-align: center;
+}
+
+/* Admin-only content */
+.admin-only {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.admin-only.authenticated {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Delete button visibility */
+.delete-btn {
+  background: none;
+  border: none;
+  color: #c62828;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 2px 5px;
+  transition: all 0.2s;
+  border-radius: 3px;
+  display: none; /* Hidden by default */
+}
+
+.delete-btn.show {
+  display: inline-block;
+}
+
+.delete-btn:hover {
+  background-color: #ffebee;
+}
+
 footer {
   text-align: center;
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .auth-section {
+    align-self: flex-end;
+  }
 }
